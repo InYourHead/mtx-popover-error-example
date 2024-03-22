@@ -1,1 +1,16 @@
+@use '@ng-matero/extensions' as mtx;
+@import "@angular/material/theming";
+
+$primaryPalette: mat-palette($mat-indigo);
+$accentPalette:  mat-palette($mat-pink, A200, A100, A400);
+
+// the default warn palette is red, so use that if the theme doesn't define one
+$warnPalette:    mat-palette($mat-red);
+$defaultTheme: mat-light-theme($primaryPalette, $accentPalette, $warnPalette);
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@include mtx.all-component-themes($defaultTheme);

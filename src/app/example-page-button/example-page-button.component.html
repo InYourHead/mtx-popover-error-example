@@ -1,1 +1,19 @@
-<p>example-page-button works!</p>
+<div class="main-container">
+
+  <app-simple-button  #popoverTrigger="mtxPopoverTrigger" [mtxPopoverTriggerFor]="popover"></app-simple-button>
+  <mtx-popover #popover="mtxPopover"
+               [position]="[positionStart, positionEnd]"
+               [enterDelay]="enterDelay"
+               [leaveDelay]="leaveDelay"
+               [xOffset]="xOffset"
+               [yOffset]="yOffset"
+               [class]="'simple-class'"
+               [closeOnPanelClick]="closeOnPanelClick"
+               [closeOnBackdropClick]="true">
+    <mat-card class="popover">
+      <mat-card-content>
+        <img [src]="previewUrl" class="popover-img" [style.width.px]="300">
+      </mat-card-content>
+    </mat-card>
+  </mtx-popover>
+</div>
